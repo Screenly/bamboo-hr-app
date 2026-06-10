@@ -6,7 +6,7 @@ icon: https://playground.srly.io/edge-apps/bamboo-hr-app/static/images/icon.svg
 author: Screenly, Inc.
 categories:
   - HR
-  - Dashboard
+  - Dashboards
 ready_signal: true
 settings:
   api_key:
