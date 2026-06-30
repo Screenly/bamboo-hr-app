@@ -2,7 +2,7 @@
 syntax: manifest_v1
 id: 01K6ZS32JCFHG6E56T28YYPNG2
 description: Display's employee information like leaves, birthdays, and anniversaries from BambooHR
-icon: https://playground.srly.io/edge-apps/bamboo-hr-app/static/images/icon.svg
+icon: https://playground.srly.io/edge-apps/icons/bamboo-hr-app.svg
 author: Screenly, Inc.
 categories:
   - HR
