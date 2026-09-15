@@ -13,7 +13,8 @@ export function setTimezone(tz: string): void {
 
 function buildInitialsEl(firstName: string, lastName: string): HTMLElement {
   const div = document.createElement('div')
-  div.className = 'avatar-initials'
+  div.className =
+    'avatar-initials w-10 h-10 rounded-full bg-[#ac1fff] flex items-center justify-center text-[0.875rem] font-medium shrink-0'
   div.textContent = `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase()
   return div
 }
@@ -27,7 +28,7 @@ function buildAvatarEl(
     const img = document.createElement('img')
     img.src = photoUrl
     img.alt = `${firstName} ${lastName}`
-    img.className = 'avatar'
+    img.className = 'avatar w-10 h-10 rounded-full object-cover shrink-0'
     img.onerror = () => img.replaceWith(buildInitialsEl(firstName, lastName))
     return img
   }
@@ -36,9 +37,9 @@ function buildAvatarEl(
 
 function buildEmployeeRow(avatar: HTMLElement, name: string): HTMLElement {
   const row = document.createElement('div')
-  row.className = 'employee-row'
+  row.className = 'employee-row flex items-center gap-3 shrink-0'
   const nameEl = document.createElement('span')
-  nameEl.className = 'employee-name'
+  nameEl.className = 'employee-name text-xl font-medium truncate'
   nameEl.textContent = name
   row.appendChild(avatar)
   row.appendChild(nameEl)
@@ -47,7 +48,8 @@ function buildEmployeeRow(avatar: HTMLElement, name: string): HTMLElement {
 
 function renderEmptyState(container: HTMLElement, message: string): void {
   const p = document.createElement('p')
-  p.className = 'empty-state'
+  p.className =
+    'empty-state m-0 text-base font-normal opacity-60 portrait:text-[1.375rem]'
   p.textContent = message
   container.appendChild(p)
 }
@@ -69,12 +71,14 @@ function updateCardSummary(
   }
 
   const countEl = document.createElement('p')
-  countEl.className = 'summary-count'
+  countEl.className =
+    'summary-count m-0 text-[1.125rem] font-normal opacity-85 portrait:text-[1.375rem]'
   countEl.textContent = `${count} ${countLabel}`
   summary.appendChild(countEl)
 
   const group = document.createElement('div')
-  group.className = 'avatar-group'
+  group.className =
+    'avatar-group flex [&>*]:ml-[-0.625rem] [&>*]:border-2 [&>*]:border-[#171e24] [&>*:first-child]:ml-0 portrait:[&>*]:w-14 portrait:[&>*]:h-14 portrait:[&>*]:text-[1.125rem]'
   for (const { photoUrl, firstName, lastName } of items) {
     group.appendChild(buildAvatarEl(photoUrl, firstName, lastName))
   }

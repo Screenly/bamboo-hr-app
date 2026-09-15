@@ -6,22 +6,47 @@
     <title>BambooHR - Screenly Edge App</title>
     <script src="screenly.js?version=1"></script>
   </head>
-  <body>
+  <body
+    class="text-white text-shadow bg-[url('/static/images/bg.webp')] bg-no-repeat bg-center bg-cover bg-[#171e24] before:content-[''] before:fixed before:inset-0 before:z-[var(--z-index-backdrop)] before:pointer-events-none before:bg-black/20 before:backdrop-blur-[7px]"
+  >
     <auto-scaler
       reference-width="1920"
       reference-height="1080"
       orientation="auto"
+      class="relative z-[var(--z-index-content)]"
     >
-      <div id="app">
-        <app-header class="header" show-date></app-header>
+      <div
+        id="app"
+        class="w-full h-full flex flex-col pt-[1.3rem] px-[1.094rem] portrait:pt-3 portrait:px-3"
+      >
+        <app-header
+          class="header rounded-[1.25rem] bg-black/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.15),inset_0_-1px_0_rgba(255,255,255,0.05)] portrait:text-[1.5rem]"
+          show-date
+        ></app-header>
 
-        <main id="content">
-          <h1 id="date-heading"></h1>
+        <main
+          id="content"
+          class="flex-1 flex flex-col items-center justify-center py-8"
+        >
+          <h1
+            id="date-heading"
+            class="mb-10 text-[2.813rem] font-normal tracking-[-0.113rem] text-center whitespace-nowrap portrait:text-[3rem] portrait:tracking-[-0.1rem] portrait:whitespace-normal portrait:mb-12"
+          ></h1>
 
-          <div id="cards-grid">
-            <section class="card" id="birthdays-card">
-              <div class="card-header">
-                <div class="card-icon">
+          <div
+            id="cards-grid"
+            class="grid grid-cols-3 gap-10 w-[calc(100%-4rem)] max-w-[78rem] portrait:grid-cols-1 portrait:auto-rows-fr portrait:w-[calc(100%-3rem)] portrait:max-w-[48rem] portrait:gap-7"
+          >
+            <section
+              class="card relative flex flex-col gap-8 py-7 px-8 h-[34rem] rounded-[1.05rem] border-[1.05px] border-white/[0.06] bg-[linear-gradient(90deg,rgba(10,10,10,0.45)_0%,rgba(10,10,10,0.45)_100%),linear-gradient(123.91deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.01)_100%)] shadow-[0_0.84rem_2.52rem_rgba(0,0,0,0.15),inset_0_1.05px_0_rgba(255,255,255,0.1),inset_0_-1.05px_0_rgba(255,255,255,0.03)] backdrop-blur-lg overflow-hidden portrait:h-auto portrait:min-h-64 portrait:py-8 portrait:px-10 portrait:gap-6"
+              id="birthdays-card"
+            >
+              <div
+                class="card-header flex items-center gap-4 shrink-0 portrait:gap-5"
+              >
+                <div
+                  class="card-icon flex items-center justify-center shrink-0 [&>svg]:w-10 [&>svg]:h-10 portrait:[&>svg]:w-14 portrait:[&>svg]:h-14"
+                >
                   <svg
                     width="40"
                     height="40"
@@ -36,17 +61,37 @@
                     />
                   </svg>
                 </div>
-                <span class="card-title">Birthdays</span>
+                <span
+                  class="card-title text-[1.125rem] font-normal whitespace-nowrap portrait:text-[1.75rem] portrait:font-medium"
+                  >Birthdays</span
+                >
               </div>
-              <div class="card-body" id="birthdays-list">
-                <p class="empty-state">No upcoming birthdays.</p>
+              <div
+                class="card-body flex flex-col gap-5 overflow-hidden portrait:hidden"
+                id="birthdays-list"
+              >
+                <p
+                  class="empty-state m-0 text-base font-normal opacity-60 portrait:text-[1.375rem]"
+                >
+                  No upcoming birthdays.
+                </p>
               </div>
-              <div class="card-summary" id="birthdays-summary"></div>
+              <div
+                class="card-summary hidden flex-col gap-4 portrait:flex"
+                id="birthdays-summary"
+              ></div>
             </section>
 
-            <section class="card" id="anniversaries-card">
-              <div class="card-header">
-                <div class="card-icon">
+            <section
+              class="card relative flex flex-col gap-8 py-7 px-8 h-[34rem] rounded-[1.05rem] border-[1.05px] border-white/[0.06] bg-[linear-gradient(90deg,rgba(10,10,10,0.45)_0%,rgba(10,10,10,0.45)_100%),linear-gradient(123.91deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.01)_100%)] shadow-[0_0.84rem_2.52rem_rgba(0,0,0,0.15),inset_0_1.05px_0_rgba(255,255,255,0.1),inset_0_-1.05px_0_rgba(255,255,255,0.03)] backdrop-blur-lg overflow-hidden portrait:h-auto portrait:min-h-64 portrait:py-8 portrait:px-10 portrait:gap-6"
+              id="anniversaries-card"
+            >
+              <div
+                class="card-header flex items-center gap-4 shrink-0 portrait:gap-5"
+              >
+                <div
+                  class="card-icon flex items-center justify-center shrink-0 [&>svg]:w-10 [&>svg]:h-10 portrait:[&>svg]:w-14 portrait:[&>svg]:h-14"
+                >
                   <svg
                     width="40"
                     height="40"
@@ -73,17 +118,37 @@
                     </defs>
                   </svg>
                 </div>
-                <span class="card-title">Work Anniversaries</span>
+                <span
+                  class="card-title text-[1.125rem] font-normal whitespace-nowrap portrait:text-[1.75rem] portrait:font-medium"
+                  >Work Anniversaries</span
+                >
               </div>
-              <div class="card-body" id="anniversaries-list">
-                <p class="empty-state">No upcoming anniversaries.</p>
+              <div
+                class="card-body flex flex-col gap-5 overflow-hidden portrait:hidden"
+                id="anniversaries-list"
+              >
+                <p
+                  class="empty-state m-0 text-base font-normal opacity-60 portrait:text-[1.375rem]"
+                >
+                  No upcoming anniversaries.
+                </p>
               </div>
-              <div class="card-summary" id="anniversaries-summary"></div>
+              <div
+                class="card-summary hidden flex-col gap-4 portrait:flex"
+                id="anniversaries-summary"
+              ></div>
             </section>
 
-            <section class="card" id="on-leave-card">
-              <div class="card-header">
-                <div class="card-icon">
+            <section
+              class="card relative flex flex-col gap-8 py-7 px-8 h-[34rem] rounded-[1.05rem] border-[1.05px] border-white/[0.06] bg-[linear-gradient(90deg,rgba(10,10,10,0.45)_0%,rgba(10,10,10,0.45)_100%),linear-gradient(123.91deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.01)_100%)] shadow-[0_0.84rem_2.52rem_rgba(0,0,0,0.15),inset_0_1.05px_0_rgba(255,255,255,0.1),inset_0_-1.05px_0_rgba(255,255,255,0.03)] backdrop-blur-lg overflow-hidden portrait:h-auto portrait:min-h-64 portrait:py-8 portrait:px-10 portrait:gap-6"
+              id="on-leave-card"
+            >
+              <div
+                class="card-header flex items-center gap-4 shrink-0 portrait:gap-5"
+              >
+                <div
+                  class="card-icon flex items-center justify-center shrink-0 [&>svg]:w-10 [&>svg]:h-10 portrait:[&>svg]:w-14 portrait:[&>svg]:h-14"
+                >
                   <svg
                     width="40"
                     height="40"
@@ -98,12 +163,25 @@
                     />
                   </svg>
                 </div>
-                <span class="card-title">On Leave Today</span>
+                <span
+                  class="card-title text-[1.125rem] font-normal whitespace-nowrap portrait:text-[1.75rem] portrait:font-medium"
+                  >On Leave Today</span
+                >
               </div>
-              <div class="card-body" id="on-leave-list">
-                <p class="empty-state">No one on leave today.</p>
+              <div
+                class="card-body flex flex-col gap-5 overflow-hidden portrait:hidden"
+                id="on-leave-list"
+              >
+                <p
+                  class="empty-state m-0 text-base font-normal opacity-60 portrait:text-[1.375rem]"
+                >
+                  No one on leave today.
+                </p>
               </div>
-              <div class="card-summary" id="on-leave-summary"></div>
+              <div
+                class="card-summary hidden flex-col gap-4 portrait:flex"
+                id="on-leave-summary"
+              ></div>
             </section>
           </div>
         </main>
