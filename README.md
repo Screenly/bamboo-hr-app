@@ -1,3 +1,5 @@
+[![Version](https://img.shields.io/github/v/release/Screenly/bamboo-hr-app)](https://github.com/Screenly/bamboo-hr-app/releases/latest)
+
 # BambooHR App
 
 Displays employee birthdays, work anniversaries, and who's on leave today, sourced from BambooHR.
